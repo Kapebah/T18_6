@@ -26,5 +26,22 @@ namespace T18_6_Task_2
         {
             return $"Price: {Price}\nMaximum speed: {MaxSpeed}\nYear of manufacturer of the bicycle: {VehicleYear}\nCount of passengers: {CountOfPassengers}";
         }
+        /// <summary>
+        /// Input info about product
+        /// </summary>
+        /// <returns>Inputed info</returns>
+        public static Bicycle Input()
+        {
+            Write("Enter the bicycle's price: ");
+            double price = Convert.ToDouble(ReadLine());
+            Write("Enter the bicycle's maximum speed in km/h: ");
+            double maxSpeed = Convert.ToDouble(ReadLine());
+            Write("Enter the bycicle's year of manufacturer: ");
+            int vehicleYear = Convert.ToInt32(ReadLine());
+            Write("Enter count of passengers: ");
+            int countOfPassengers = Convert.ToInt32(ReadLine());
+            return new Bicycle(price, maxSpeed, vehicleYear, countOfPassengers);
+        }
+
     }
 }
