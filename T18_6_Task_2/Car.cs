@@ -27,5 +27,21 @@ namespace T18_6_Task_2
             return $"Price: {Price}\nMaximum speed: {MaxSpeed}\nYear of manufacturer of the car: {VehicleYear}\n" +
                 $"Car power in horsepower: {VehiclePower}";
         }
+        /// <summary>
+        /// Input info about car
+        /// </summary>
+        /// <returns>Inputed info</returns>
+        public static Car Input()
+        {
+            Write("Enter the car's price: ");
+            double price = Convert.ToDouble(ReadLine());
+            Write("Enter the car's maximum speed in km/h: ");
+            double maxSpeed = Convert.ToDouble(ReadLine());
+            Write("Enter the care's year of manufacturer: ");
+            int vehicleYear = Convert.ToInt32(ReadLine());
+            Write("Enter car power in horsepower: ");
+            int horsePower = Convert.ToInt32(ReadLine());
+            return new Car(price, maxSpeed, vehicleYear, horsePower);
+        }
     }
 }
