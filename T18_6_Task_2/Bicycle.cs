@@ -27,7 +27,7 @@ namespace T18_6_Task_2
             return $"Price: {Price}\nMaximum speed: {MaxSpeed}\nYear of manufacturer of the bicycle: {VehicleYear}\nCount of passengers: {CountOfPassengers}";
         }
         /// <summary>
-        /// Input info about product
+        /// Input info about bicycle
         /// </summary>
         /// <returns>Inputed info</returns>
         public static Bicycle Input()
