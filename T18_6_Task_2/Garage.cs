@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace T18_6_Task_2
 {
-    internal class Garage
+    enum TypeOfVehicle { }
+    class Garage
     {
+        List<Vehicle> vehicles = new List<Vehicle>();
+
     }
 }
