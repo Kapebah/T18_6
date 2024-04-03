@@ -37,7 +37,7 @@ namespace T18_6_Task_2
             double price = Convert.ToDouble(ReadLine());
             Write("Enter the car's maximum speed in km/h: ");
             double maxSpeed = Convert.ToDouble(ReadLine());
-            Write("Enter the care's year of manufacturer: ");
+            Write("Enter the car's year of manufacturer: ");
             int vehicleYear = Convert.ToInt32(ReadLine());
             Write("Enter car power in horsepower: ");
             int horsePower = Convert.ToInt32(ReadLine());
