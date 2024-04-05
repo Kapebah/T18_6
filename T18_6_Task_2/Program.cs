@@ -9,7 +9,7 @@ namespace T18_6_Task_2
 {
     internal class Program
     {
-        enum Action { Add = 1, Output, Exit }
+        enum Action { AddBicycles = 1, AddCars, AddLorries, OutputBicycles, OutputCars, OutputLorries, Exit }
         static void Main(string[] args)
         {
             try
@@ -19,22 +19,7 @@ namespace T18_6_Task_2
 
                 while (flag)
                 {
-                    WriteLine("Choose an action: ");
-                    if(Enum.TryParse(ReadLine(), out Action action))
-                    {
-                        switch (action)
-                        {
-                            case Action.Add:
-                                garage.AddVehicle();
-                                break;
-                            case Action.Output:
-                                garage.OutputVehicle();
-                                break;
-                            case Action.Exit:
-                                Environment.Exit(0);
-                                break;
-                        }
-                    }
+                    garage.WorkWithVehicles();
                 }
             }
             catch (Exception ex)

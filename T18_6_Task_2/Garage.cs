@@ -1,48 +1,78 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 using static System.Console;
 
 namespace T18_6_Task_2
 {
-    enum TypeOfVehicle { Bicycle = 1, Car, Lorry, Exit }
+    enum Action { AddBicycles = 1, AddCars, AddLorries, OutputBicycles, OutputCars, OutputLorries, Exit }
     class Garage
     {
-        List<Vehicle> vehicles = new List<Vehicle>();
+        List<Bicycle> bicycles = new List<Bicycle>();
+        List<Car> cars = new List<Car>();
+        List<Lorry> lorries = new List<Lorry>();
 
-        public void AddVehicle()
+        public void WorkWithVehicles()
         {
-            if (Enum.TryParse(ReadLine(), out TypeOfVehicle vehicle))
+            ForegroundColor = ConsoleColor.DarkCyan;
+            WriteLine("Choose an action: ");
+            ResetColor();
+            WriteLine("\t\t1 - Add bicycle to list\n\t\t2 - Add car to list\n\t\t3 - Add lorry to list\n\t\t4 - Output all bicycles\n\t\t5 - Output all cars\n\t\t6 - Output all lorries\n\t\t7 - Exit\n");
+            if (Enum.TryParse(ReadLine(), out Action action))
             {
-                switch (vehicle)
+                switch (action)
                 {
-                    case TypeOfVehicle.Bicycle:
-                        vehicles.Add(Bicycle.Input());
+                    case Action.AddBicycles:
+                        Clear();
+                        bicycles.Add(Bicycle.Input());
                         break;
-                    case TypeOfVehicle.Car:
-                        vehicles.Add(Car.Input());
+                    case Action.AddCars:
+                        Clear();
+                        cars.Add(Car.Input());
                         break;
-                    case TypeOfVehicle.Lorry:
-                        vehicles.Add(Lorry.Input());
+                    case Action.AddLorries:
+                        Clear();
+                        lorries.Add(Lorry.Input());
                         break;
-                    case TypeOfVehicle.Exit:
+                    case Action.OutputBicycles:
+                        Clear();
+                        ForegroundColor = ConsoleColor.DarkCyan;
+                        WriteLine("All bicycles: \n");
+                        ResetColor();
+                        foreach(var bicycle in bicycles)
+                        {
+                            WriteLine(bicycle.ToString());
+                            WriteLine();
+                        }
+                        break;
+                    case Action.OutputCars:
+                        Clear();
+                        ForegroundColor = ConsoleColor.DarkCyan;
+                        WriteLine("All cars: ");
+                        ResetColor();
+                        foreach (var car in cars)
+                        {
+                            WriteLine(car.ToString());
+                            WriteLine();
+                        }
+                        break;
+                    case Action.OutputLorries:
+                        Clear();
+                        ForegroundColor = ConsoleColor.DarkCyan;
+                        WriteLine("All lorries: ");
+                        ResetColor();
+                        foreach (var lorry in lorries)
+                        {
+                            WriteLine(lorry.ToString());
+                            WriteLine();
+                        }
+                        break;
+                    case Action.Exit:
                         Environment.Exit(0);
                         break;
                 }
             }
             else { WriteLine("Wrong! Try again."); }
         }
-
-        public void OutputVehicle()
-        {
-            foreach(var vehicle in vehicles)
-            {
-                WriteLine(vehicle.ToString());
-                WriteLine();
-            }
-        }
-
     }
 }
