@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static System.Console;
 
 namespace T18_6_Task_2
@@ -17,7 +13,7 @@ namespace T18_6_Task_2
         /// Constructors
         /// </summary>
         public Lorry() { }
-        public Lorry(double price, double maxSpeed, int vehicleYear, int maxCapacity) : base(price, maxSpeed, vehicleYear) =>  MaxCapacity = maxCapacity;
+        public Lorry(double price, double maxSpeed, int vehicleYear, int maxCapacity) : base(price, maxSpeed, vehicleYear) => MaxCapacity = maxCapacity;
         /// <summary>
         /// Overriden method Tostring() for output info
         /// </summary>
