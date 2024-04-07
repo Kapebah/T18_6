@@ -33,6 +33,6 @@ namespace T18_6_Task_2
         /// Output info about vehicle
         /// </summary>
         /// <returns>Info</returns>
-        public abstract string ToString();
+        public new abstract string ToString();
     }
 }
