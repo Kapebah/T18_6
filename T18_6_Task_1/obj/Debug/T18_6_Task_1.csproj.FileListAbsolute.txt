@@ -1,0 +1,7 @@
+S:\work\FoAP\T18_6_Task_2\T18_6_Task_1\bin\Debug\T18_6_Task_1.exe.config
+S:\work\FoAP\T18_6_Task_2\T18_6_Task_1\bin\Debug\T18_6_Task_1.exe
+S:\work\FoAP\T18_6_Task_2\T18_6_Task_1\bin\Debug\T18_6_Task_1.pdb
+S:\work\FoAP\T18_6_Task_2\T18_6_Task_1\obj\Debug\T18_6_Task_1.csproj.AssemblyReference.cache
+S:\work\FoAP\T18_6_Task_2\T18_6_Task_1\obj\Debug\T18_6_Task_1.csproj.CoreCompileInputs.cache
+S:\work\FoAP\T18_6_Task_2\T18_6_Task_1\obj\Debug\T18_6_Task_1.exe
+S:\work\FoAP\T18_6_Task_2\T18_6_Task_1\obj\Debug\T18_6_Task_1.pdb

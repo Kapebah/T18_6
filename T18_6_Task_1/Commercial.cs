@@ -3,6 +3,9 @@ using static System.Console;
 
 namespace T18_6_Task_1
 {
+    /// <summary>
+    /// Платное ПО
+    /// </summary>
     class Commercial : Software
     {
         /// <summary>

@@ -35,7 +35,7 @@ namespace T18_6_Task_1
                         ForegroundColor = ConsoleColor.Green;
                         WriteLine("Choose a type of software: ");
                         ResetColor();
-                        WriteLine("1 - Free\n\t\t2 - Conditional free\n\t\t3 - Commercial\n\t\t4-Exit");
+                        WriteLine("\t\t1 - Free\n\t\t2 - Conditional free\n\t\t3 - Commercial\n\t\t4 - Exit");
                         if (Enum.TryParse(ReadLine(), out TypeOfSoftware type))
                         {
                             switch (type)
@@ -77,27 +77,28 @@ namespace T18_6_Task_1
                         ForegroundColor = ConsoleColor.Green;
                         WriteLine("All softwares are acceptable to use as of the current date: \n");
                         ResetColor();
-                        foreach (Free elem in softwares)
+                        foreach (var elem in softwares)
                         {
-                            WriteLine(elem.Name);
-                            WriteLine();
-                        }
-                        foreach (ConditionalFree elem in softwares)
-                        {
-                            if ((DateTime.Now - elem.DateOfInstallation).Days > 365)
+                            if (elem is Free)
                             {
                                 WriteLine(elem.Name);
-                                WriteLine();
                             }
-                        }
-                        foreach (Commercial elem in softwares)
-                        {
-                            if ((DateTime.Now - elem.DateOfInstallation).Days > 365)
+                            else if (elem is ConditionalFree conditionalFree)
                             {
-                                WriteLine(elem.Name);
-                                WriteLine();
+                                if ((DateTime.Now - conditionalFree.DateOfInstallation).Days > conditionalFree.FreePeriod)
+                                {
+                                    WriteLine(conditionalFree.Name);
+                                }
+                            }
+                            else if (elem is Commercial commercial)
+                            {
+                                if ((DateTime.Now - commercial.DateOfInstallation).Days > commercial.PeriodOfUsage)
+                                {
+                                    WriteLine(commercial.Name);
+                                }
                             }
                         }
+                        WriteLine();
                         break;
                     ///Выйти из консоли
                     case Action.Exit:
